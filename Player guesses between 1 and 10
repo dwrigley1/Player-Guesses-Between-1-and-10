@@ -1,0 +1,35 @@
+# Python game prompts the user for their name first
+# Welcomes the player by name
+# Player is then prompted to guess between 1 & 10
+# Counter keeps track of the amount of times a player has won so far
+# Then count outputs again as the player ends the game
+
+#############################################################################
+
+count = 0
+
+playerName = input("What is your name? ")
+
+print("Hi" , playerName , "Welcome To My Game!")
+print("This Is A Game Where The Computer Picks A Number")
+print("Between 1 & 10 And You Have To Guess The Number")
+
+answer = 'yes'
+
+while answer == 'yes': 
+    import random 
+    num = random.randint(1, 10)  
+    guess = None
+
+    while guess != num: 
+        guess = input("Guess A Number Between 1 & 10 : ")  
+        guess = int(guess)
+
+    if guess == num: 
+        count = count + 1
+        print("You Have Won" , count , "Times So Far")
+        answer = input("Want To Play Again?  ")
+    
+    if answer == 'no':
+        print("Thanks For Playing" , playerName, "!")
+        print("You Won A Total Of" , count , "Times!")
